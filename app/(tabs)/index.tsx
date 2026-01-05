@@ -41,7 +41,7 @@ export default function HomeScreen() {
       
       <View className="flex-1 p-4">
         {/* === HEADER === */}
-        <View className="flex-row justify-between items-center mb-6 mt-2">
+        <View className="flex-row justify-between items-center mb-6 mt-2 pt-6">
           <View>
             <Text className="text-gray-400 text-xs uppercase tracking-widest">Current Location</Text>
             <View className="flex-row items-center mt-1">
