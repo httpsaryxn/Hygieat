@@ -1,14 +1,15 @@
 import { useColorScheme } from '@/hooks/use-color-scheme';
+import { useUser } from '@/hooks/use-user';
 import { Ionicons } from '@expo/vector-icons';
-import React, { useState } from 'react';
+import React from 'react';
 import { SafeAreaView, ScrollView, Switch, Text, TouchableOpacity, View } from 'react-native';
 
 const ProfileScreen = () => {
   const systemColorScheme = useColorScheme();
-  const [isDark, setIsDark] = useState(true); // Defaulting to dark to match app design
-  const [profileIcon, setProfileIcon] = useState('person-circle');
+  const { profileIcon, setProfileIcon, theme, setTheme } = useUser();
+  const isDark = theme === 'dark';
 
-  const toggleTheme = () => setIsDark(!isDark);
+  const toggleTheme = () => setTheme(isDark ? 'light' : 'dark');
 
   const icons = ['person-circle', 'person', 'happy', 'star', 'heart'];
 

@@ -5,9 +5,12 @@ import { HapticTab } from '@/components/haptic-tab';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
+import { useUser } from '@/hooks/use-user';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const { profileIcon } = useUser();
 
   return (
     <Tabs
@@ -34,7 +37,7 @@ export default function TabLayout() {
         name="profile"
         options={{
           title: 'Profile',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="person.crop.circle" color={color} />, // You can change the icon name as needed
+          tabBarIcon: ({ color }) => <Ionicons size={28} name={profileIcon as any} color={color} />,
         }}
       />
     </Tabs>
